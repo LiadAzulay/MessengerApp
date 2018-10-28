@@ -83,7 +83,7 @@ public class Server extends JFrame {
 				messege = (String) input.readObject();
 				showMessege("\n" + messege);
 			} catch (ClassNotFoundException classNotFoundException) {
-				showMessege("\n idk wtf that user send!");
+				showMessege("\n idk what that user send!");
 			}
 		} while (!messege.equals("CLIENT - END"));
 	}
@@ -100,7 +100,6 @@ public class Server extends JFrame {
 		}
 	}
 
-	// send messege yo client
 	private void sendMessege(String messege) {
 		try {
 			output.writeObject("SERVER - " + messege);
@@ -112,7 +111,7 @@ public class Server extends JFrame {
 		}
 	}
 
-	// updates chatWindow
+	// update chatWindow
 	private void showMessege(final String text) {
 		SwingUtilities.invokeLater(new Runnable() {
 
